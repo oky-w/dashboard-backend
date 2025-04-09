@@ -1,0 +1,718 @@
+{
+	"info": {
+		"_postman_id": "afbaeafc-f97e-4436-80a9-e2fd84392001",
+		"name": "Go-Dashboard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17474438"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "GetAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUxMzNkNThmLTEwNWUtNDc0Ny04MjcwLWU5YmY4ZjRlMTJmZCIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDQyMTU0OTJ9.s9Ff8l6etHNCVCbw2qhEwyJjkYUaeUlRDYjdV3DOvnk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/?limit=&offset=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": ""
+								},
+								{
+									"key": "offset",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdiNTE4M2RhLTNiOTItNDlhZC1iZGY4LWI2YTE2NTJmMzU2OCIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDQxNDgyMDh9.eJRVDOMKL3hnnZops2k7g1BoRsRQKpxgVTISXVHev-0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/0b837f8d-e08c-4c22-9c49-d571f7211327",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"0b837f8d-e08c-4c22-9c49-d571f7211327"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM3MGYxNDllLTFlOGMtNDc0MC04NTEwLTY1ZDBhY2FmYmNlZCIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDMwODA4Nzh9.T6cQuhEs-Dbx58tSY03gZ4YLOS9asNlfEcfdBHtHJrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/d22ec3ea-febb-46ec-9b9d-42a9ed4798c5/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"d22ec3ea-febb-46ec-9b9d-42a9ed4798c5",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdiNTE4M2RhLTNiOTItNDlhZC1iZGY4LWI2YTE2NTJmMzU2OCIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDMxNDYyOTd9.zMAjlBwYkcL5Wdq_Mh2Hz0B3LVRMOBNinrpqoFyAokM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"users@example.com\",\n    \"username\": \"users\",\n    \"password\": \"admin1\",\n    \"role\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdiNTE4M2RhLTNiOTItNDlhZC1iZGY4LWI2YTE2NTJmMzU2OCIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDQxNDgyMDh9.eJRVDOMKL3hnnZops2k7g1BoRsRQKpxgVTISXVHev-0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@example.com\",\n    \"username\": \"user\",\n    \"password\": \"password\",\n    \"role\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/0b837f8d-e08c-4c22-9c49-d571f7211327/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"0b837f8d-e08c-4c22-9c49-d571f7211327",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BankAccount",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzJkNmNmLTIzMjctNDgzNy1iODc2LTc5YzUwZTY3NTNlMiIsInVzZXJuYW1lIjoidXNlcjEiLCJyb2xlIjoidXNlciIsImV4cCI6MTc0MzA3NjYyOX0.1Pe4i3v6dlHJ4lVRcOz8y4b0MXSAGr17zedwKftaKfA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": \"c5c79d28-2eba-4212-bb91-a8f1b4b5c759\",\n  \"account_type\": \"rekening-utama\",\n  \"balance\": 100000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/bank-accounts/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"bank-accounts",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA5NWM2NWY4LWRjZGItNDY4NS1iY2NhLWRiYzUxZGFiMjZkMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDQyMjc1NzJ9.ObQvOm6Jyl4-IauslsD9DS1o8C8UlmVYSuj0OgVIr08",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/bank-accounts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"bank-accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzJkNmNmLTIzMjctNDgzNy1iODc2LTc5YzUwZTY3NTNlMiIsInVzZXJuYW1lIjoidXNlcjEiLCJyb2xlIjoidXNlciIsImV4cCI6MTc0MzA3NjYyOX0.1Pe4i3v6dlHJ4lVRcOz8y4b0MXSAGr17zedwKftaKfA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/bank-accounts/5c28be22-f1f9-45e1-a223-1de240453a4d/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"bank-accounts",
+								"5c28be22-f1f9-45e1-a223-1de240453a4d",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzJkNmNmLTIzMjctNDgzNy1iODc2LTc5YzUwZTY3NTNlMiIsInVzZXJuYW1lIjoidXNlcjEiLCJyb2xlIjoidXNlciIsImV4cCI6MTc0MzA3NjYyOX0.1Pe4i3v6dlHJ4lVRcOz8y4b0MXSAGr17zedwKftaKfA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/bank-accounts/a6de7d0c-16cb-457b-93d6-0a798d877a1d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"bank-accounts",
+								"a6de7d0c-16cb-457b-93d6-0a798d877a1d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByAccountID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM2MzgwOGNmLWU0MzYtNGVmYi05Y2ZhLWQ5ZDY0MmY2NTQyOCIsInVzZXJuYW1lIjoidXNlciIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzQ0MjE3NjE3fQ.CWQ_BmGnNg91j2wRCoJByQ6uoWJ5_mSw1XHTnBtJCfM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/bank-accounts/by-user-id/363808cf-e436-4efb-9cfa-d9d642f65428",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"bank-accounts",
+								"by-user-id",
+								"363808cf-e436-4efb-9cfa-d9d642f65428"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzJkNmNmLTIzMjctNDgzNy1iODc2LTc5YzUwZTY3NTNlMiIsInVzZXJuYW1lIjoidXNlcjEiLCJyb2xlIjoidXNlciIsImV4cCI6MTc0MzA3NjYyOX0.1Pe4i3v6dlHJ4lVRcOz8y4b0MXSAGr17zedwKftaKfA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from_account_number\": \"8987105066\",\n    \"to_account_number\": \"1360264458\",\n    \"amount\": 10000.0,\n    \"transaction_type\": \"transfer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA5NWM2NWY4LWRjZGItNDY4NS1iY2NhLWRiYzUxZGFiMjZkMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDQyMzE0NzJ9.npyuXAVNJr2u4_INvMIcZ2BMDui3R7zMkQjSaMnKB7E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/f23e8f04-da5e-4dbf-810b-1a9a3342037f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"f23e8f04-da5e-4dbf-810b-1a9a3342037f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA5NWM2NWY4LWRjZGItNDY4NS1iY2NhLWRiYzUxZGFiMjZkMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDQyMjU4NjN9.yl8oUw5lR47Rfn1h3jZkA9kWNfuiHvM2qI42uFwBhis",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByAccountBank",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA5NWM2NWY4LWRjZGItNDY4NS1iY2NhLWRiYzUxZGFiMjZkMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDQyMjU4NjN9.yl8oUw5lR47Rfn1h3jZkA9kWNfuiHvM2qI42uFwBhis",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/by-account-id/4027598002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"by-account-id",
+								"4027598002"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUxMzNkNThmLTEwNWUtNDc0Ny04MjcwLWU5YmY4ZjRlMTJmZCIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDQyMTU0OTJ9.s9Ff8l6etHNCVCbw2qhEwyJjkYUaeUlRDYjdV3DOvnk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzJkNmNmLTIzMjctNDgzNy1iODc2LTc5YzUwZTY3NTNlMiIsInVzZXJuYW1lIjoidXNlcjEiLCJyb2xlIjoidXNlciIsImV4cCI6MTc0MzA3NjYyOX0.1Pe4i3v6dlHJ4lVRcOz8y4b0MXSAGr17zedwKftaKfA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/47f6c93e-5951-4b1f-87e4-a5263d51fdc0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"47f6c93e-5951-4b1f-87e4-a5263d51fdc0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdiNTE4M2RhLTNiOTItNDlhZC1iZGY4LWI2YTE2NTJmMzU2OCIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDMxNDYyOTd9.zMAjlBwYkcL5Wdq_Mh2Hz0B3LVRMOBNinrpqoFyAokM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": \"3bc33f57-24de-4d76-b264-42fab097e720\",\n  \"full_name\": \"John Doe\",\n  \"phone_number\": \"+6281234567890\",\n  \"date_of_birth\": \"2025-03-27\",\n  \"address\": \"123 Main Street, Jakarta, Indonesia\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByUserID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzJkNmNmLTIzMjctNDgzNy1iODc2LTc5YzUwZTY3NTNlMiIsInVzZXJuYW1lIjoidXNlcjEiLCJyb2xlIjoidXNlciIsImV4cCI6MTc0MzA3NjYyOX0.1Pe4i3v6dlHJ4lVRcOz8y4b0MXSAGr17zedwKftaKfA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/by-user-id/aa5ee810-54c1-40d6-8c0d-135e0e678e74",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"by-user-id",
+								"aa5ee810-54c1-40d6-8c0d-135e0e678e74"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzJkNmNmLTIzMjctNDgzNy1iODc2LTc5YzUwZTY3NTNlMiIsInVzZXJuYW1lIjoidXNlcjEiLCJyb2xlIjoidXNlciIsImV4cCI6MTc0MzA3NjYyOX0.1Pe4i3v6dlHJ4lVRcOz8y4b0MXSAGr17zedwKftaKfA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"full_name\": \"John Doe\",\n    \"phone_number\": \"+6281234567890\",\n    \"date_of_birth\": \"2006-10-12\",\n    \"address\": \"123 Main Street, Jakarta, Indonesia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/47f6c93e-5951-4b1f-87e4-a5263d51fdc0/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"47f6c93e-5951-4b1f-87e4-a5263d51fdc0",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzJkNmNmLTIzMjctNDgzNy1iODc2LTc5YzUwZTY3NTNlMiIsInVzZXJuYW1lIjoidXNlcjEiLCJyb2xlIjoidXNlciIsImV4cCI6MTc0MzA3NjYyOX0.1Pe4i3v6dlHJ4lVRcOz8y4b0MXSAGr17zedwKftaKfA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/47f6c93e-5951-4b1f-87e4-a5263d51fdc0/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"47f6c93e-5951-4b1f-87e4-a5263d51fdc0",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
