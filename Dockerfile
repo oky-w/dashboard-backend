@@ -6,4 +6,4 @@ COPY . .
 RUN go mod tidy
 RUN go build -o main
 
-ENTRYPOINT ["/app/main"]
+ENTRYPOINT ["/app/main", "fresh"]

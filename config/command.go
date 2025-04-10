@@ -62,11 +62,31 @@ var MigrateCmd = &cobra.Command{
 	},
 }
 
+// MigrateFreshCmd command to migrate fresh database and seed
+var MigrateFreshCmd = &cobra.Command{
+	Use:   "fresh",
+	Short: "Migrate fresh database",
+	Run: func(_ *cobra.Command, _ []string) {
+		log.Info().Msg("Migrating fresh database...")
+
+		db, _, err := GetDatabaseConnection()
+		if err != nil {
+			return
+		}
+		defer CloseDatabase(db)
+
+		DropDB(db)
+		MigrateDB(db)
+		SeedDB(db)
+		log.Info().Msg("Database migrated successfully.")
+	},
+}
+
 // InitCommand initializes the command
 func InitCommand() {
 	var rootCmd = &cobra.Command{Use: "dbtool"}
 
-	rootCmd.AddCommand(SeedCmd, DropCmd, MigrateCmd)
+	rootCmd.AddCommand(SeedCmd, DropCmd, MigrateCmd, MigrateFreshCmd)
 
 	if err := rootCmd.Execute(); err != nil {
 		log.Fatal().Err(err).Msg(constants.MsgCommandFail)

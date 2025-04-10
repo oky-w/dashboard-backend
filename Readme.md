@@ -205,6 +205,11 @@ To build and run the Docker container, follow these steps:
    docker compose down
    ```
 
+   **Troubleshooting:**
+
+- If you encounter issues, please check the .env file and try changing the DB_HOST and REDIS_HOST variables to 127.0.0.1, localhost, or the name of your Docker container (postgres and redis).
+- If you still cannot run the application, try changing the DB_HOST and REDIS_HOST variables to the IP address of your Docker container (e.g., 192.168.59.103).
+
 ## Tech Stack
 
 ### Backend

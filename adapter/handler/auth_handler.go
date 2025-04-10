@@ -44,8 +44,6 @@ func (h *AuthHandler) Login(c *gin.Context) {
 		return
 	}
 
-	resp := dto.UserLoginResponseDTO(*data)
-
-	utils.ResponseJSON(c, resp, http.StatusOK, "Login successful")
+	utils.ResponseJSON(c, *data, http.StatusOK, "Login successful")
 	log.Info().Str("username", req.Username).Msg("Login successful")
 }
